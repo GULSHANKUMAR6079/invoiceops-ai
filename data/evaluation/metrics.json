@@ -1,0 +1,1038 @@
+{
+  "metadata": {
+    "dataset_version": "invoiceops-synthetic-v1",
+    "dataset_seed": 4317,
+    "dataset_count": 500,
+    "split": "test",
+    "split_definition": "Contiguous 60/20/20 partitions; vendor IDs and names disjoint; dispatch test-only.",
+    "dataset_provenance": "Procedural fictional vendors, PDFs, and independent scenario labels. No external data.",
+    "pdf_renderer": "PyMuPDF 1.28.2",
+    "sample_size": 100,
+    "provider": "baseline",
+    "model": null,
+    "prompt_version": null,
+    "code_sha256": "4388322c2134f2228a7c51d1779b2cb8ee26ee835da5fbdb8ebf6558bc5c0e60",
+    "generated_at": "2026-11-05T21:41:44.064513+00:00",
+    "hardware": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+      "logical_cpus_visible": 16,
+      "python": "3.12.4"
+    },
+    "workload": "One document at a time; upload, extraction, reconciliation and commits to fresh local SQLite.",
+    "cost_assumptions": {
+      "baseline_api_cost_usd": 0,
+      "groq_usd_per_million_input_output": null,
+      "note": "Token estimates exclude failed calls without usage and all non-API costs."
+    },
+    "rule_versions": {
+      "default": {
+        "amount_absolute": "0",
+        "amount_percent": "0",
+        "quantity_absolute": "0",
+        "quantity_percent": "0",
+        "minimum_confidence": 0.9
+      },
+      "relaxed": {
+        "amount_absolute": "5",
+        "amount_percent": "0",
+        "quantity_absolute": "1",
+        "quantity_percent": "0",
+        "minimum_confidence": 0.9
+      }
+    }
+  },
+  "baseline": {
+    "extraction": {
+      "fields": {
+        "invoice_number": {
+          "n": 100,
+          "exact_accuracy": 0.9,
+          "normalized_accuracy": 0.9,
+          "expected_present": 95,
+          "expected_absent": 5,
+          "missing": 10,
+          "hallucinated": 0,
+          "tp": 85,
+          "fp": 0,
+          "fn": 10,
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f1": 0.9444444444444444
+        },
+        "invoice_date": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 95,
+          "expected_absent": 5,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 90,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.9473684210526315,
+          "f1": 0.972972972972973
+        },
+        "vendor_name": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 95,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "vendor_id": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 95,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "purchase_order_number": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 95,
+          "expected_absent": 5,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 90,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.9473684210526315,
+          "f1": 0.972972972972973
+        },
+        "currency": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 95,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "subtotal": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 95,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "tax_amount": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 95,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "total_amount": {
+          "n": 100,
+          "exact_accuracy": 0.95,
+          "normalized_accuracy": 0.95,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 5,
+          "hallucinated": 0,
+          "tp": 95,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.95,
+          "f1": 0.9743589743589743
+        },
+        "line_items": {
+          "n": 100,
+          "exact_accuracy": 0.48,
+          "normalized_accuracy": 0.48,
+          "expected_present": 100,
+          "expected_absent": 0,
+          "missing": 52,
+          "hallucinated": 0,
+          "tp": 48,
+          "fp": 0,
+          "fn": 52,
+          "precision": 1.0,
+          "recall": 0.48,
+          "f1": 0.6486486486486487
+        }
+      },
+      "micro": {
+        "tp": 883,
+        "fp": 0,
+        "fn": 102,
+        "precision": 1.0,
+        "recall": 0.8964467005076142,
+        "f1": 0.9453961456102784
+      },
+      "macro": {
+        "precision": 1.0,
+        "recall": 0.8969473684210525,
+        "f1": 0.9385192885192886
+      },
+      "line_item_quality": {
+        "tp": 102,
+        "fp": 0,
+        "fn": 108,
+        "precision": 1.0,
+        "recall": 0.4857142857142857,
+        "f1": 0.6538461538461539
+      },
+      "missing_field_rate": 0.10355329949238579,
+      "missing_field_count": 102,
+      "present_fields": 985,
+      "hallucinated_field_rate": 0.0,
+      "hallucinated_field_count": 0,
+      "absent_fields": 15,
+      "total_amount_accuracy": 0.95,
+      "total_amount_n": 100
+    },
+    "reconciliation": {
+      "n": 100,
+      "correct": 85,
+      "accuracy": 0.85,
+      "accuracy_wilson_95": [
+        0.7671626666784216,
+        0.906940968088377
+      ],
+      "confusion_matrix": {
+        "labels": [
+          "MATCHED",
+          "REVIEW_REQUIRED",
+          "PROCESSING_FAILED"
+        ],
+        "rows_truth_columns_prediction": [
+          [
+            15,
+            15,
+            0
+          ],
+          [
+            0,
+            65,
+            0
+          ],
+          [
+            0,
+            0,
+            5
+          ]
+        ]
+      },
+      "exceptions": {
+        "tp": 102,
+        "fp": 84,
+        "fn": 8,
+        "precision": 0.5483870967741935,
+        "recall": 0.9272727272727272,
+        "f1": 0.6891891891891891
+      },
+      "exception_recall": 0.9272727272727272,
+      "exception_recall_wilson_95": [
+        0.8630186778224797,
+        0.962690026201357
+      ],
+      "by_exception_code": {
+        "CURRENCY_MISMATCH": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "DUPLICATE_INVOICE": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EXTRACTION_FAILED": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "EXTRACTION_UNCERTAIN": {
+          "tp": 5,
+          "fp": 45,
+          "fn": 0,
+          "precision": 0.1,
+          "recall": 1.0,
+          "f1": 0.18181818181818182
+        },
+        "MISSING_FIELD": {
+          "tp": 15,
+          "fp": 39,
+          "fn": 0,
+          "precision": 0.2777777777777778,
+          "recall": 1.0,
+          "f1": 0.43478260869565216
+        },
+        "ORDER_TOTAL_MISMATCH": {
+          "tp": 35,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "QUANTITY_MISMATCH": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75
+        },
+        "TAX_MISMATCH": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "TOTAL_ARITHMETIC": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "UNIT_PRICE_MISMATCH": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 4,
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75
+        },
+        "UNKNOWN_VENDOR": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "duplicate_detection": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "duplicate_detection_recall": 1.0,
+      "false_approval_rate": 0.0,
+      "false_approval_count": 0,
+      "expected_intervention": 70,
+      "false_exception_rate": 0.5,
+      "false_exception_count": 15,
+      "expected_clean": 30
+    },
+    "operational": {
+      "n": 100,
+      "p50_ms": 17.155950074084103,
+      "p95_ms": 22.92600499931723,
+      "throughput_documents_per_second": 56.95343329826646,
+      "workload_seconds": 1.755820399383083,
+      "manual_review_rate": 0.8,
+      "manual_review_count": 80,
+      "failure_count": 5,
+      "failure_rate": 0.05,
+      "average_estimated_cost_usd": null,
+      "documents_with_token_usage": 0
+    },
+    "groups": {
+      "layout_group": {
+        "held_out": {
+          "n": 50,
+          "decision_accuracy": 0.7,
+          "exception_recall": 0.8490566037735849,
+          "extraction_micro_f1": 0.9125138427464009
+        },
+        "seen": {
+          "n": 50,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9761658031088083
+        }
+      },
+      "layout": {
+        "dispatch": {
+          "n": 50,
+          "decision_accuracy": 0.7,
+          "exception_recall": 0.8490566037735849,
+          "extraction_micro_f1": 0.9125138427464009
+        },
+        "grid": {
+          "n": 23,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9532710280373832
+        },
+        "ledger": {
+          "n": 27,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.994413407821229
+        }
+      },
+      "difficulty": {
+        "difficult": {
+          "n": 92,
+          "decision_accuracy": 0.8369565217391305,
+          "exception_recall": 0.9272727272727272,
+          "extraction_micro_f1": 0.9402810304449649
+        },
+        "easy": {
+          "n": 8,
+          "decision_accuracy": 1.0,
+          "exception_recall": null,
+          "extraction_micro_f1": 1.0
+        }
+      },
+      "quality": {
+        "corrupt": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.0
+        },
+        "digital": {
+          "n": 95,
+          "decision_accuracy": 0.8421052631578947,
+          "exception_recall": 0.9238095238095239,
+          "extraction_micro_f1": 0.9713971397139713
+        }
+      },
+      "case": {
+        "ambiguous": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9247311827956989
+        },
+        "amount_above": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9690721649484536
+        },
+        "amount_below": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9690721649484536
+        },
+        "corrupt": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.0
+        },
+        "currency_mismatch": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9690721649484536
+        },
+        "date_formats": {
+          "n": 5,
+          "decision_accuracy": 0.4,
+          "exception_recall": null,
+          "extraction_micro_f1": 0.9690721649484536
+        },
+        "different_layout": {
+          "n": 5,
+          "decision_accuracy": 0.6,
+          "exception_recall": null,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "duplicate_invoice": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "incorrect_quantity": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 0.8,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "incorrect_tax": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "incorrect_unit_price": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 0.8,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "matched": {
+          "n": 5,
+          "decision_accuracy": 0.6,
+          "exception_recall": null,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "missing_fields": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.961038961038961
+        },
+        "missing_po": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9655172413793104
+        },
+        "multi_line_mismatch": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 0.8,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "partial_delivery": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 0.8,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "prompt_injection": {
+          "n": 5,
+          "decision_accuracy": 0.4,
+          "exception_recall": null,
+          "extraction_micro_f1": 0.9690721649484536
+        },
+        "reordered_lines": {
+          "n": 5,
+          "decision_accuracy": 0.6,
+          "exception_recall": null,
+          "extraction_micro_f1": 0.9795918367346939
+        },
+        "same_name_distinct_id": {
+          "n": 5,
+          "decision_accuracy": 0.4,
+          "exception_recall": null,
+          "extraction_micro_f1": 0.9690721649484536
+        },
+        "unknown_vendor": {
+          "n": 5,
+          "decision_accuracy": 1.0,
+          "exception_recall": 1.0,
+          "extraction_micro_f1": 0.9690721649484536
+        }
+      }
+    },
+    "experiments": {
+      "relaxed_tolerances": {
+        "n": 100,
+        "correct": 85,
+        "accuracy": 0.85,
+        "accuracy_wilson_95": [
+          0.7671626666784216,
+          0.906940968088377
+        ],
+        "confusion_matrix": {
+          "labels": [
+            "MATCHED",
+            "REVIEW_REQUIRED",
+            "PROCESSING_FAILED"
+          ],
+          "rows_truth_columns_prediction": [
+            [
+              15,
+              15,
+              0
+            ],
+            [
+              0,
+              65,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        "exceptions": {
+          "tp": 75,
+          "fp": 84,
+          "fn": 35,
+          "precision": 0.4716981132075472,
+          "recall": 0.6818181818181818,
+          "f1": 0.5576208178438662
+        },
+        "exception_recall": 0.6818181818181818,
+        "exception_recall_wilson_95": [
+          0.5899016684157921,
+          0.7614637375517979
+        ],
+        "by_exception_code": {
+          "CURRENCY_MISMATCH": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "DUPLICATE_INVOICE": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EXTRACTION_FAILED": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EXTRACTION_UNCERTAIN": {
+            "tp": 5,
+            "fp": 45,
+            "fn": 0,
+            "precision": 0.1,
+            "recall": 1.0,
+            "f1": 0.18181818181818182
+          },
+          "MISSING_FIELD": {
+            "tp": 15,
+            "fp": 39,
+            "fn": 0,
+            "precision": 0.2777777777777778,
+            "recall": 1.0,
+            "f1": 0.43478260869565216
+          },
+          "ORDER_TOTAL_MISMATCH": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 15,
+            "precision": 1.0,
+            "recall": 0.5714285714285714,
+            "f1": 0.7272727272727273
+          },
+          "QUANTITY_MISMATCH": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "TAX_MISMATCH": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "TOTAL_ARITHMETIC": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "UNIT_PRICE_MISMATCH": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 10,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "UNKNOWN_VENDOR": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "duplicate_detection": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "duplicate_detection_recall": 1.0,
+        "false_approval_rate": 0.0,
+        "false_approval_count": 0,
+        "expected_intervention": 70,
+        "false_exception_rate": 0.5,
+        "false_exception_count": 15,
+        "expected_clean": 30
+      },
+      "no_duplicate_detection": {
+        "n": 100,
+        "correct": 82,
+        "accuracy": 0.82,
+        "accuracy_wilson_95": [
+          0.7333246397578691,
+          0.8829986834574896
+        ],
+        "confusion_matrix": {
+          "labels": [
+            "MATCHED",
+            "REVIEW_REQUIRED",
+            "PROCESSING_FAILED"
+          ],
+          "rows_truth_columns_prediction": [
+            [
+              15,
+              15,
+              0
+            ],
+            [
+              3,
+              62,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        "exceptions": {
+          "tp": 97,
+          "fp": 84,
+          "fn": 13,
+          "precision": 0.5359116022099447,
+          "recall": 0.8818181818181818,
+          "f1": 0.6666666666666666
+        },
+        "exception_recall": 0.8818181818181818,
+        "exception_recall_wilson_95": [
+          0.8082479662756031,
+          0.9296193862563361
+        ],
+        "by_exception_code": {
+          "CURRENCY_MISMATCH": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "DUPLICATE_INVOICE": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 5,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "EXTRACTION_FAILED": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EXTRACTION_UNCERTAIN": {
+            "tp": 5,
+            "fp": 45,
+            "fn": 0,
+            "precision": 0.1,
+            "recall": 1.0,
+            "f1": 0.18181818181818182
+          },
+          "MISSING_FIELD": {
+            "tp": 15,
+            "fp": 39,
+            "fn": 0,
+            "precision": 0.2777777777777778,
+            "recall": 1.0,
+            "f1": 0.43478260869565216
+          },
+          "ORDER_TOTAL_MISMATCH": {
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "QUANTITY_MISMATCH": {
+            "tp": 6,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "recall": 0.6,
+            "f1": 0.75
+          },
+          "TAX_MISMATCH": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "TOTAL_ARITHMETIC": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "UNIT_PRICE_MISMATCH": {
+            "tp": 6,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "recall": 0.6,
+            "f1": 0.75
+          },
+          "UNKNOWN_VENDOR": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "duplicate_detection": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 5,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "duplicate_detection_recall": 0.0,
+        "false_approval_rate": 0.04285714285714286,
+        "false_approval_count": 3,
+        "expected_intervention": 70,
+        "false_exception_rate": 0.5,
+        "false_exception_count": 15,
+        "expected_clean": 30
+      },
+      "no_soft_confidence_gate": {
+        "n": 100,
+        "correct": 85,
+        "accuracy": 0.85,
+        "accuracy_wilson_95": [
+          0.7671626666784216,
+          0.906940968088377
+        ],
+        "confusion_matrix": {
+          "labels": [
+            "MATCHED",
+            "REVIEW_REQUIRED",
+            "PROCESSING_FAILED"
+          ],
+          "rows_truth_columns_prediction": [
+            [
+              15,
+              15,
+              0
+            ],
+            [
+              0,
+              65,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        },
+        "exceptions": {
+          "tp": 102,
+          "fp": 84,
+          "fn": 8,
+          "precision": 0.5483870967741935,
+          "recall": 0.9272727272727272,
+          "f1": 0.6891891891891891
+        },
+        "exception_recall": 0.9272727272727272,
+        "exception_recall_wilson_95": [
+          0.8630186778224797,
+          0.962690026201357
+        ],
+        "by_exception_code": {
+          "CURRENCY_MISMATCH": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "DUPLICATE_INVOICE": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EXTRACTION_FAILED": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "EXTRACTION_UNCERTAIN": {
+            "tp": 5,
+            "fp": 45,
+            "fn": 0,
+            "precision": 0.1,
+            "recall": 1.0,
+            "f1": 0.18181818181818182
+          },
+          "MISSING_FIELD": {
+            "tp": 15,
+            "fp": 39,
+            "fn": 0,
+            "precision": 0.2777777777777778,
+            "recall": 1.0,
+            "f1": 0.43478260869565216
+          },
+          "ORDER_TOTAL_MISMATCH": {
+            "tp": 35,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "QUANTITY_MISMATCH": {
+            "tp": 6,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "recall": 0.6,
+            "f1": 0.75
+          },
+          "TAX_MISMATCH": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "TOTAL_ARITHMETIC": {
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "UNIT_PRICE_MISMATCH": {
+            "tp": 6,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "recall": 0.6,
+            "f1": 0.75
+          },
+          "UNKNOWN_VENDOR": {
+            "tp": 5,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          }
+        },
+        "duplicate_detection": {
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "duplicate_detection_recall": 1.0,
+        "false_approval_rate": 0.0,
+        "false_approval_count": 0,
+        "expected_intervention": 70,
+        "false_exception_rate": 0.5,
+        "false_exception_count": 15,
+        "expected_clean": 30
+      }
+    }
+  },
+  "llm": {
+    "status": "NOT EVALUATED"
+  }
+}

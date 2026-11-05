@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    environment:
+      DATABASE_URL: ${COMPOSE_DATABASE_URL:-sqlite:////app/data/runtime/invoiceops.db}
+      INVOICE_PROVIDER: ${INVOICE_PROVIDER:-baseline}
+      INVOICE_FIXTURE_MANIFEST: /app/data/runtime/synthetic/manifest.json
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-20b}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - invoice-data:/app/data/runtime
+
+volumes:
+  invoice-data:
+

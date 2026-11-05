@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 230" role="img" aria-labelledby="title"><title id="title">Decision accuracy by layout group</title>
+<rect width="680" height="230" rx="12" fill="#f1f6ef"/>
+<text x="28" y="43" fill="#17392c" font-family="sans-serif" font-size="23" font-weight="700">Decision accuracy by layout group</text>
+<text x="28" y="106" fill="#17392c" font-family="sans-serif" font-size="15">Seen (n=50)</text>
+<rect x="220" y="90" width="340" height="20" rx="4" fill="#d7e3d8"/>
+<rect x="220" y="90" width="340.00" height="20" rx="4" fill="#266047"/>
+<text x="575" y="106" fill="#17392c" font-family="sans-serif" font-size="15">100.0%</text>
+<text x="28" y="168" fill="#17392c" font-family="sans-serif" font-size="15">Held Out (n=50)</text>
+<rect x="220" y="152" width="340" height="20" rx="4" fill="#d7e3d8"/>
+<rect x="220" y="152" width="238.00" height="20" rx="4" fill="#975c25"/>
+<text x="575" y="168" fill="#17392c" font-family="sans-serif" font-size="15">70.0%</text>
+</svg>

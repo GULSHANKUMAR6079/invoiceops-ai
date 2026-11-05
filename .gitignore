@@ -1,0 +1,14 @@
+.venv/
+.tmp/
+.deps/
+__pycache__/
+.pytest_cache/
+.env
+*.db
+*.db-*
+data/synthetic/
+data/runtime/
+frontend/node_modules/
+frontend/dist/
+*.log
+

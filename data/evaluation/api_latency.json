@@ -1,0 +1,159 @@
+{
+  "workload": "Sequential multipart upload + extraction + reconciliation, HTTPX ASGI TestClient, fresh disk SQLite",
+  "n": 30,
+  "p50_ms": 33.800599980168045,
+  "p95_ms": 48.775819968432145,
+  "documents_per_second": 27.337514699396515,
+  "samples": [
+    {
+      "id": "sample-00401",
+      "state": "MATCHED",
+      "latency_ms": 99.50209991075099
+    },
+    {
+      "id": "sample-00402",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 33.419999992474914
+    },
+    {
+      "id": "sample-00403",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 32.031500013545156
+    },
+    {
+      "id": "sample-00404",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 36.547400057315826
+    },
+    {
+      "id": "sample-00405",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 40.03089992329478
+    },
+    {
+      "id": "sample-00406",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 35.59369989670813
+    },
+    {
+      "id": "sample-00407",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 55.194800021126866
+    },
+    {
+      "id": "sample-00408",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 32.228700118139386
+    },
+    {
+      "id": "sample-00409",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 29.764599865302444
+    },
+    {
+      "id": "sample-00410",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 30.628800159320235
+    },
+    {
+      "id": "sample-00411",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 29.349399963393807
+    },
+    {
+      "id": "sample-00412",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 32.91329997591674
+    },
+    {
+      "id": "sample-00413",
+      "state": "MATCHED",
+      "latency_ms": 33.839600160717964
+    },
+    {
+      "id": "sample-00414",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 32.97409997321665
+    },
+    {
+      "id": "sample-00415",
+      "state": "PROCESSING_FAILED",
+      "latency_ms": 19.293100107461214
+    },
+    {
+      "id": "sample-00416",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 33.761599799618125
+    },
+    {
+      "id": "sample-00417",
+      "state": "MATCHED",
+      "latency_ms": 34.15059996768832
+    },
+    {
+      "id": "sample-00418",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 32.89150004275143
+    },
+    {
+      "id": "sample-00419",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 32.552999909967184
+    },
+    {
+      "id": "sample-00420",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 27.13440009392798
+    },
+    {
+      "id": "sample-00421",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 35.43270006775856
+    },
+    {
+      "id": "sample-00422",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 30.565599910914898
+    },
+    {
+      "id": "sample-00423",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 33.36989996023476
+    },
+    {
+      "id": "sample-00424",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 40.28309998102486
+    },
+    {
+      "id": "sample-00425",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 38.19569991901517
+    },
+    {
+      "id": "sample-00426",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 40.93039990402758
+    },
+    {
+      "id": "sample-00427",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 36.31170000880957
+    },
+    {
+      "id": "sample-00428",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 34.41000008024275
+    },
+    {
+      "id": "sample-00429",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 39.57040002569556
+    },
+    {
+      "id": "sample-00430",
+      "state": "REVIEW_REQUIRED",
+      "latency_ms": 34.52050010673702
+    }
+  ]
+}

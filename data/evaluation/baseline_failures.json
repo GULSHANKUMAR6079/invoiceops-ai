@@ -1,0 +1,1167 @@
+[
+  {
+    "id": "sample-00403",
+    "case": "amount_above",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "ORDER_TOTAL_MISMATCH",
+      "TOTAL_ARITHMETIC"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH",
+        "TOTAL_ARITHMETIC"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00404",
+    "case": "amount_below",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "ORDER_TOTAL_MISMATCH",
+      "TOTAL_ARITHMETIC"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH",
+        "TOTAL_ARITHMETIC"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00407",
+    "case": "unknown_vendor",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNKNOWN_VENDOR"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "UNKNOWN_VENDOR"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00408",
+    "case": "missing_po",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00411",
+    "case": "missing_fields",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00412",
+    "case": "date_formats",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00414",
+    "case": "ambiguous",
+    "layout": "ledger",
+    "mismatched_fields": [
+      "invoice_number"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD",
+      "EXTRACTION_UNCERTAIN"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00415",
+    "case": "corrupt",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "invoice_number",
+      "invoice_date",
+      "vendor_name",
+      "vendor_id",
+      "purchase_order_number",
+      "currency",
+      "subtotal",
+      "tax_amount",
+      "total_amount",
+      "line_items"
+    ],
+    "expected_status": "PROCESSING_FAILED",
+    "expected_exceptions": [
+      "EXTRACTION_FAILED"
+    ],
+    "observed": {
+      "status": "PROCESSING_FAILED",
+      "exception_codes": [
+        "EXTRACTION_FAILED"
+      ]
+    },
+    "error": "The PDF is damaged or unreadable. Upload a readable copy."
+  },
+  {
+    "id": "sample-00416",
+    "case": "currency_mismatch",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "CURRENCY_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "CURRENCY_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00419",
+    "case": "same_name_distinct_id",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00420",
+    "case": "prompt_injection",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00421",
+    "case": "matched",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00422",
+    "case": "duplicate_invoice",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "DUPLICATE_INVOICE"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "DUPLICATE_INVOICE"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00425",
+    "case": "incorrect_quantity",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "QUANTITY_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00426",
+    "case": "incorrect_unit_price",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNIT_PRICE_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00429",
+    "case": "incorrect_tax",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "TAX_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "TAX_MISMATCH",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00430",
+    "case": "multi_line_mismatch",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNIT_PRICE_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00433",
+    "case": "different_layout",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00434",
+    "case": "ambiguous",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "invoice_number",
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD",
+      "EXTRACTION_UNCERTAIN"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00435",
+    "case": "corrupt",
+    "layout": "grid",
+    "mismatched_fields": [
+      "invoice_number",
+      "invoice_date",
+      "vendor_name",
+      "vendor_id",
+      "purchase_order_number",
+      "currency",
+      "subtotal",
+      "tax_amount",
+      "total_amount",
+      "line_items"
+    ],
+    "expected_status": "PROCESSING_FAILED",
+    "expected_exceptions": [
+      "EXTRACTION_FAILED"
+    ],
+    "observed": {
+      "status": "PROCESSING_FAILED",
+      "exception_codes": [
+        "EXTRACTION_FAILED"
+      ]
+    },
+    "error": "The PDF is damaged or unreadable. Upload a readable copy."
+  },
+  {
+    "id": "sample-00437",
+    "case": "reordered_lines",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00438",
+    "case": "partial_delivery",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "QUANTITY_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00443",
+    "case": "amount_above",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "ORDER_TOTAL_MISMATCH",
+      "TOTAL_ARITHMETIC"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH",
+        "TOTAL_ARITHMETIC"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00444",
+    "case": "amount_below",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "ORDER_TOTAL_MISMATCH",
+      "TOTAL_ARITHMETIC"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH",
+        "TOTAL_ARITHMETIC"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00447",
+    "case": "unknown_vendor",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNKNOWN_VENDOR"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "UNKNOWN_VENDOR"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00448",
+    "case": "missing_po",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00451",
+    "case": "missing_fields",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00452",
+    "case": "date_formats",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00454",
+    "case": "ambiguous",
+    "layout": "ledger",
+    "mismatched_fields": [
+      "invoice_number"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD",
+      "EXTRACTION_UNCERTAIN"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00455",
+    "case": "corrupt",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "invoice_number",
+      "invoice_date",
+      "vendor_name",
+      "vendor_id",
+      "purchase_order_number",
+      "currency",
+      "subtotal",
+      "tax_amount",
+      "total_amount",
+      "line_items"
+    ],
+    "expected_status": "PROCESSING_FAILED",
+    "expected_exceptions": [
+      "EXTRACTION_FAILED"
+    ],
+    "observed": {
+      "status": "PROCESSING_FAILED",
+      "exception_codes": [
+        "EXTRACTION_FAILED"
+      ]
+    },
+    "error": "The PDF is damaged or unreadable. Upload a readable copy."
+  },
+  {
+    "id": "sample-00456",
+    "case": "currency_mismatch",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "CURRENCY_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "CURRENCY_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00459",
+    "case": "same_name_distinct_id",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00460",
+    "case": "prompt_injection",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00461",
+    "case": "matched",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00462",
+    "case": "duplicate_invoice",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "DUPLICATE_INVOICE"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "DUPLICATE_INVOICE"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00465",
+    "case": "incorrect_quantity",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "QUANTITY_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00466",
+    "case": "incorrect_unit_price",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNIT_PRICE_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00469",
+    "case": "incorrect_tax",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "TAX_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "TAX_MISMATCH",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00470",
+    "case": "multi_line_mismatch",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNIT_PRICE_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00473",
+    "case": "different_layout",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00474",
+    "case": "ambiguous",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "invoice_number",
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD",
+      "EXTRACTION_UNCERTAIN"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00475",
+    "case": "corrupt",
+    "layout": "grid",
+    "mismatched_fields": [
+      "invoice_number",
+      "invoice_date",
+      "vendor_name",
+      "vendor_id",
+      "purchase_order_number",
+      "currency",
+      "subtotal",
+      "tax_amount",
+      "total_amount",
+      "line_items"
+    ],
+    "expected_status": "PROCESSING_FAILED",
+    "expected_exceptions": [
+      "EXTRACTION_FAILED"
+    ],
+    "observed": {
+      "status": "PROCESSING_FAILED",
+      "exception_codes": [
+        "EXTRACTION_FAILED"
+      ]
+    },
+    "error": "The PDF is damaged or unreadable. Upload a readable copy."
+  },
+  {
+    "id": "sample-00477",
+    "case": "reordered_lines",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00478",
+    "case": "partial_delivery",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "QUANTITY_MISMATCH",
+      "ORDER_TOTAL_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00483",
+    "case": "amount_above",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "ORDER_TOTAL_MISMATCH",
+      "TOTAL_ARITHMETIC"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH",
+        "TOTAL_ARITHMETIC"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00484",
+    "case": "amount_below",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "ORDER_TOTAL_MISMATCH",
+      "TOTAL_ARITHMETIC"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "ORDER_TOTAL_MISMATCH",
+        "TOTAL_ARITHMETIC"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00487",
+    "case": "unknown_vendor",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "UNKNOWN_VENDOR"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "UNKNOWN_VENDOR"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00488",
+    "case": "missing_po",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00491",
+    "case": "missing_fields",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00492",
+    "case": "date_formats",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00494",
+    "case": "ambiguous",
+    "layout": "ledger",
+    "mismatched_fields": [
+      "invoice_number"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "MISSING_FIELD",
+      "EXTRACTION_UNCERTAIN"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00495",
+    "case": "corrupt",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "invoice_number",
+      "invoice_date",
+      "vendor_name",
+      "vendor_id",
+      "purchase_order_number",
+      "currency",
+      "subtotal",
+      "tax_amount",
+      "total_amount",
+      "line_items"
+    ],
+    "expected_status": "PROCESSING_FAILED",
+    "expected_exceptions": [
+      "EXTRACTION_FAILED"
+    ],
+    "observed": {
+      "status": "PROCESSING_FAILED",
+      "exception_codes": [
+        "EXTRACTION_FAILED"
+      ]
+    },
+    "error": "The PDF is damaged or unreadable. Upload a readable copy."
+  },
+  {
+    "id": "sample-00496",
+    "case": "currency_mismatch",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "REVIEW_REQUIRED",
+    "expected_exceptions": [
+      "CURRENCY_MISMATCH"
+    ],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN",
+        "CURRENCY_MISMATCH"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00499",
+    "case": "same_name_distinct_id",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  },
+  {
+    "id": "sample-00500",
+    "case": "prompt_injection",
+    "layout": "dispatch",
+    "mismatched_fields": [
+      "line_items"
+    ],
+    "expected_status": "MATCHED",
+    "expected_exceptions": [],
+    "observed": {
+      "status": "REVIEW_REQUIRED",
+      "exception_codes": [
+        "MISSING_FIELD",
+        "EXTRACTION_UNCERTAIN"
+      ]
+    },
+    "error": null
+  }
+]
